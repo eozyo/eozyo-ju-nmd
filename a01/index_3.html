@@ -1,0 +1,39 @@
+<html lang="en-US"><head>
+		<meta charset="utf-8">
+		<meta name="author" content="orem18kz[@]student,ju,se">
+		<title>Client-side Programming: Assignment 01. </title>
+		<link href="https://fonts.googleapis.com/css?family=Dosis:400,800%7CGentium+Basic:400,700%7CMuli:600" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="scripts/script.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Guess the number App</h1>
+			<section>
+				<h2>Instructions</h2>
+				<ul>
+					<li>Click on the Start button to begin the game.</li>
+					<li>Input a number between 1 and 80 to try to guess the random generated number, then click OK.</li>
+					<li>You have 10 attempts to guess the correct number.</li>
+					<li>You may click on «cancel» at any time to stop the game.</li>
+				</ul>
+				<p>Good luck!</p>
+			</section>
+		</header>
+		<main id="sandbox">
+			<h2>Test UI</h2>
+			<button id="start">Start</button>
+			<ul id="records">
+				<li id="game-0" class="game-won" data-attempts="1" data-random="44" data-guess="44">Game Won. Congrats! In 1 turn you guessed the random number 44.</li>
+				<li id="game-1" class="game-won" data-attempts="3" data-random="42" data-guess="42">Game Won. Congrats! In 3 turns you guessed the random number 42.</li>
+				<li id="game-2" class="game-lost" data-attempts="5" data-random="45" data-guess="5">Game Lost. You could not guess the random number 45 after 5 turns.</li>
+				<li id="game-3" class="game-won" data-attempts="4" data-random="46" data-guess="46">Game Won. Congrats! In 4 turns you guessed the random number 46.</li>
+				<li id="game-4" class="game-canceled" data-attempts="1" data-random="47" data-guess="x">Game Canceled after 1 attempt. The random number was 47.</li>
+			</ul>
+			<div id="average" style="display: block;">Average<span>2.67</span></div>
+		</main>
+		<footer>
+			<p>© MMXIX. All copyrights reserved. nmd.eozyo.info. </p>
+		</footer>
+	
+</body></html>

@@ -1,0 +1,41 @@
+/****************
+** General CSS **
+****************/
+body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
+/***********
+** header **
+***********/
+header { width: 80%; margin: 0 auto; }
+	header h1 { text-align: center; }
+	header h2 { margin-bottom: 0; }
+	header ul { width: 65%; margin-top: 0.5em; }
+/************
+** Sandbox **
+************/
+#sandbox { 
+	width: 90%; 
+	min-width: 600px; 
+	background-color: #EDEDED; 
+	font-family: 'Dosis', sans-serif; 
+	text-align: center;
+	margin: 0 auto; 
+	padding: 1.12em 0; 
+	border: 8px solid #474747; 
+	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); 
+	border-radius: 8px; 
+}
+#sandbox ul { list-style: none; }
+
+/***********
+** footer **
+***********/
+footer p { text-align: center; }
+
+
+/*html { background-color: #ccc; }
+body { background-color: #fff; font-family: 'Cormorant Garamond', serif; width: 35%; margin: 1em auto; padding: 2%; text-align: center; border: 1px solid gray; border-radius: 10px; }
+footer {  }
+
+header h1 { margin-top: 0; }*/
+
+main section:first-child p:first-of-type { font-weight: 700; }
