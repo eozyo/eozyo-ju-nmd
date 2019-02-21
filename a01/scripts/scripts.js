@@ -95,9 +95,7 @@ function record($win,$rndm,$turn,$guess,$tabs,$chances){
 	li.setAttribute("title", (($tabs!="") ? "[Your wrong guesses were: " + $tabs +"]" : "There were no guesses.") );
 	record.appendChild(li);
 	if(won.length>0){
-		for (i = 0; i < won.length; i++) {
-			sum += +won[i].dataset.attempts;
-		}
+		for (i = 0; i < won.length; i++) { sum += +won[i].dataset.attempts; }
 		average.firstElementChild.innerHTML = (sum/won.length).toFixed(2);
 		average.style.display="block";
 	} else { average.firstElementChild.innerHTML = li.dataset.attempts; }	
