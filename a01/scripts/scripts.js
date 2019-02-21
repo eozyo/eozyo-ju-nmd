@@ -95,7 +95,7 @@ function record($win,$rndm,$turn,$guess,$tabs,$chances){
 	li.setAttribute("data-attempts",$turn);
 	li.setAttribute("data-random",$rndm);
 	li.setAttribute("data-guess",$guess);
-	li.setAttribute("title",("[Your wrong guesses were: " + $tabs +"]"));
+	li.setAttribute("title", (($tabs!="") ? "[Your wrong guesses were: " + $tabs +"]" : "There were no guesses.") );
 	record.appendChild(li);
 	if(won.length>0){
 		for (i = 0; i < won.length; i++) {

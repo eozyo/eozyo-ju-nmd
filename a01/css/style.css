@@ -62,6 +62,7 @@ header { width: 80%; margin: 0 auto; }
 	#record li.game-lost { background-color: rgba(189,63,50,0.25); }
 	#record li.game-lost:hover { background-color: rgba(189,63,50,1); }
 	#record li.game-canceled { color: #616161; background-color: rgba(43,43,43,0.25); font-style: italic; }
+	#record li.game-canceled:before { font-style: normal; }
 	#record li.game-canceled:hover { color: #f2f2f2; background-color: rgba(43,43,43,1); }
 /************
 ** Average **
@@ -70,8 +71,6 @@ header { width: 80%; margin: 0 auto; }
 	#average span { font-weight: normal; }
 	#average span:before { content:'\A'; white-space:pre; }
 	#average span:after   { font-size: 60%; content:'\Aguesses/won games'; white-space:pre; }
-
-
 /***********
 ** footer **
 ***********/
