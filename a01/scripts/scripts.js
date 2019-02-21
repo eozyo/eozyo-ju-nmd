@@ -56,17 +56,14 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 		if(count=== true) { turn++; count = false; }
 	}
 	record(win,rndm,turn,guess,tabs.toString(),$chances)
-	debugger;
 	alert(msg);
 }
 function record($win,$rndm,$turn,$guess,$tabs,$chances){
-	//debugger;
 	var record = document.getElementById("record");
 	var average = document.getElementById("average");
 	var li		= document.createElement("li");
 	var won		= document.getElementsByClassName("game-won");
 	var sum		= 0;
-	
 	$guess = ($guess==null) ? "x" : $guess;
 	if(record.childElementCount>0) { li.setAttribute("id","game-"+record.childElementCount); } else { li.setAttribute("id","game-0"); }
 	switch(true) {
