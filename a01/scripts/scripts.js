@@ -15,7 +15,6 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 				guess = parseInt(guess);
 				if(guess == rndm) { msg = "You Won! the number was indeed " + rndm; var win = true; quit = true; }
 				else {
-					
 					if(turn+1 !== $chances) {
 						diff = Math.abs (guess-rndm);
 						sign = Math.sign(guess-rndm);	
@@ -28,12 +27,9 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 									default	: msg = "Sorry, I can't help you. Your number is just very, very far.";
 						}
 						msg = msg + "\nSorry, (" + guess + ") was incorrect, try with a " + ((sign > 0) ? "lower" : "higher") + " number.";
-						
-					} else {
-						msg = "Sorry, you ran out of your " + $chances + " chances.\nGame over.";
-					}
-						tabs.push(guess);
-						count = true;					
+					} else { msg = "Sorry, you ran out of your " + $chances + " chances.\nGame over."; }
+					tabs.push(guess);
+					count = true;					
 				}
 			break;
 			case (guess==null || !guess):
@@ -52,9 +48,7 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 									default	  : msg = "Something went wrong.\n"
 				}
 			break;
-			case (isNaN(guess)): 
-				msg = "Sorry, (" + guess + ") does not seem to be a valid character.";
-			break;
+			case (isNaN(guess)): msg = "Sorry, (" + guess + ") does not seem to be a valid character."; break;
 			default: msg = "Something went wrong. ";
 		}	
 		if(win===true && quit === true) { turn++; break; } else
@@ -64,7 +58,6 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 	record(win,rndm,turn,guess,tabs.toString(),$chances)
 	debugger;
 	alert(msg);
-	
 }
 function record($win,$rndm,$turn,$guess,$tabs,$chances){
 	//debugger;
