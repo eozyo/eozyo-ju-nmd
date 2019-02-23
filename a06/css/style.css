@@ -1,11 +1,16 @@
+/**
+*
+*  title	: JavaScript Lab 06, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
 /****************
 ** General CSS **
 ****************/
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
-a:link { color: #357df3; text-decoration: none; border-bottom: 3px solid transparent; }
-a:visited { color: #AF5A0E; }
-a:hover { border-bottom: 3px solid #357df3; }
-a:active {}
+button { position: relative; z-index: 999; }
+section { display: block; }
 /***********
 ** header **
 ***********/
@@ -13,28 +18,32 @@ header { width: 80%; margin: 0 auto; }
 	header h1 { text-align: center; }
 	header h2 { margin-bottom: 0; }
 	header ul { width: 65%; margin-top: 0.5em; }
-/************
-** Sandbox **
-************/
-#sandbox {
+/***************
+** playground **
+***************/
+#playground {
 	width: 90%;
+	min-height: 250px;
 	min-width: 600px;
 	background-color: #EDEDED;
 	font-family: 'Dosis', sans-serif;
-	text-align: left;
 	margin: 0 auto;
-	padding: 1.12em 0;
 	border: 8px solid #474747;
+	box-sizing: border-box;
 	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
 	border-radius: 8px;
 }
-	#sandbox p:first-of-type,#tree {  width: 30%; margin: 0 auto 0 40%; }
+	#playground h2 { text-align: center; margin: 0.56em auto; padding: 0; }
 /************
-** folders **
+** sandbox **
 ************/
-#tree { padding: 0 0 0 2%; list-style-type: none; }
-#tree li { margin-top: 0.56em; }
-	#tree li + li { margin-top: 0.15em; }
+#sandbox { min-height: 350px; min-width: 350px; }
+/**************
+** .v and .h **
+**************/
+.h,.v { display:flex; flex:1 1 auto; }
+.v { flex-direction:column; }
+.h { flex-direction:row; }
 /***********
 ** footer **
 ***********/
