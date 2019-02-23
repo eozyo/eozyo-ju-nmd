@@ -16,10 +16,10 @@ header { width: 80%; margin: 0 auto; }
 	header h1 { text-align: center; }
 	header h2 { margin-bottom: 0; }
 	header ul { width: 65%; margin-top: 0.5em; }
-/************
-** Sandbox **
-************/
-#sandbox {
+/***************
+** playground **
+***************/
+#playground {
 	width: 90%;
 	min-width: 600px;
 	background-color: #EDEDED;
