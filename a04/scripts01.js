@@ -10,7 +10,6 @@ window.onload = function() {
 	];
 	loadList(items);
 }
-
 function loadList(items) {
 	var ul = document.querySelector("#orders ul:first-of-type");	
 	var li,span;
@@ -27,9 +26,9 @@ function loadList(items) {
 		ul.appendChild(li);
 	}
 }
-function addOrder(item) {
+function addOrder(items) {
 	var ul 			= document.querySelector("#orders p + ul")
-	var li			= item.cloneNode(true);
+	var li			= items.cloneNode(true);
 	var span		= li.firstChild;
 	var span_sale	= new TrackIncome(document.querySelector("#orders p:first-of-type span"),span.dataset.price);
 	var obutton		= document.querySelector("#orders button");
@@ -40,7 +39,7 @@ function addOrder(item) {
 	ul.appendChild(li);
 	if(obutton.hasAttribute("disabled")) { 
 		obutton.removeAttribute("disabled");
-		obutton.onclick = function() { span_sale.record(); sendToBarista(ul,span_sale); } 
+		obutton.onclick = function() { span_sale.record(ul.children); sendToBarista(ul,span_sale); } 
 	}
 }
 function removeOrder(span,residual,span_sale,obutton) {
@@ -110,43 +109,40 @@ function finish(li) {
 		}
 	}
 }
-function TrackIncome(el,amt) {
+function TrackIncome($el,$amt) {
 	var sales = document.getElementById("sales");
-	if(el) { 
-		el.innerHTML = parseInt(el.innerHTML) + parseInt(amt); 
-	} else {
-		el = document.createElement("span");
-		el.innerHTML = amt;
-		document.querySelector("#orders p:first-of-type").appendChild(el);
+	if($el){ $el.innerHTML = parseInt($el.innerHTML) + parseInt($amt); } 
+	else {
+		$el = document.createElement("span"); $el.innerHTML = $amt;
+		document.querySelector("#orders p:first-of-type").appendChild($el);
 	}
-	this.elm = el;
-	this.currentTotal = (isNaN(parseInt(sales.innerHTML)) ? 0 : parseInt(sales.innerHTML));
-	this.record = function() { 
-		sales.innerHTML = (this.currentTotal + parseInt(el.innerHTML));
-		sales.style.display="inline";
+	this.elm 			= $el;
+	this.currentTotal 	= (isNaN(parseInt(sales.innerHTML)) ? 0 : parseInt(sales.innerHTML));
+	this.record 		= function(items) { 
+		sales.innerHTML 	= (this.currentTotal + parseInt($el.innerHTML));
+		sales.style.display	= "inline";
+		// saves the sales into a global object "summary"
+		var order = { items : [], total : null, };
+		for(var i=0;i<items.length;i++) {
+			order.items[i] = { name : items[i].firstChild.dataset.name, price : +items[i].firstChild.dataset.price }
+			order.total = +order.total + order.items[i].price;
+		}	
+		// Call "summary" to see all the available data.
+		if(window.summary) {
+			summary.totalOrders++;
+			summary.orders.push({ items: order.items, total: +order.total});
+			summary.totalItems = summary.totalItems + order.items.length;
+			summary.total		 = summary.total + order.total;
+		} else {
+			window.summary = {
+				totalOrders : 1,
+				totalItems	: +order.items.length,
+				total		: +order.total,
+				orders		: [{ items: order.items, total: order.total}]
+			}
+		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Helper functions */
+function _random($lowerLimit,$higherLimit) { var random = Math.floor((Math.random()*$higherLimit)+$lowerLimit); return random; }
+function _(str) { console.log(str); }
