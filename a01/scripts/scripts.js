@@ -1,6 +1,6 @@
 /**
 *
-*  title	: Lab02, Client-side Programming I && II
+*  title	: Lab01, Client-side Programming I && II
 *  author	: orem18kz
 *  email	: orem18kz[@]student,ju,se
 *
