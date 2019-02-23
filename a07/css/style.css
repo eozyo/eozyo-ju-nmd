@@ -1,0 +1,40 @@
+/**
+*
+*  title	: JavaScript Lab 06, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
+/****************
+** General CSS **
+****************/
+body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
+button { position: relative; z-index: 999; }
+section { display: block; }
+/***********
+** header **
+***********/
+header { width: 80%; margin: 0 auto; }
+	header h1 { text-align: center; }
+	header h2 { margin-bottom: 0; }
+	header ul { width: 65%; margin-top: 0.5em; }
+/***************
+** playground **
+***************/
+#playground {
+	width: 90%;
+	min-height: 250px;
+	min-width: 600px;
+	background-color: #EDEDED;
+	font-family: 'Dosis', sans-serif;
+	margin: 0 auto;
+	border: 8px solid #474747;
+	box-sizing: border-box;
+	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
+	border-radius: 8px;
+}
+	#playground h2 { text-align: center; margin: 0.56em auto; padding: 0; }
+/***********
+** footer **
+***********/
+footer p { text-align: center; }
