@@ -1,9 +1,15 @@
-
+/**
+*
+*  title	: JavaScript Lab 04, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
 header { width: 80%; text-align: center; margin: 0 auto; }
 	header ul:first-of-type { width: 50%; margin: 0 auto; text-align: left; }
 main { width: 80%; font-family: 'Dosis', sans-serif; margin: 0 auto; /*border: 1px solid red;*/ }
-	main > div { 
+	main > div {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -21,29 +27,29 @@ main { width: 80%; font-family: 'Dosis', sans-serif; margin: 0 auto; /*border: 1
 			border-radius: 10px;
 			box-shadow: 1px 1px 4px #000;
 		}
-		main>div>section:nth-child(1) { 
+		main>div>section:nth-child(1) {
 			border-color: #6D0A00;
 			background: #CB356B;
 			background: -webkit-linear-gradient(to top, #BD3F32, #CB356B);
 			background: linear-gradient(to top, #BD3F32, #CB356B);
 		}
-		main>div>section:nth-child(2) { 
+		main>div>section:nth-child(2) {
 			border-color: #AF5A0E;
 			background: #F2994A;
 			background: -webkit-linear-gradient(to top, #F2C94C, #F2994A);
-			background: linear-gradient(to top, #F2C94C, #F2994A); 
+			background: linear-gradient(to top, #F2C94C, #F2994A);
 		}
-		main>div>section:nth-child(3) { 
+		main>div>section:nth-child(3) {
 			border-color: #246A02;
-			background: #56ab2f;  
+			background: #56ab2f;
 			background: -webkit-linear-gradient(to top, #a8e063, #56ab2f);
-			background: linear-gradient(to top, #a8e063, #56ab2f); 
+			background: linear-gradient(to top, #a8e063, #56ab2f);
 		}
 h1,h2,h3 { font-weight: 800; }
 h3 { text-transform: capitalize; }
 section p { text-align: center; }
 button[disabled="disabled"] { display: none; }
-/************** 
+/**************
 *     tags    *
 **************/
 span.tag {
@@ -96,7 +102,7 @@ span.remove-tag {
 /***************
 *  list styles *
 ***************/
-main ul { 
+main ul {
 	width: 90%;
 	min-height: 112px;
 	background-color: #f4f4f4;
@@ -122,7 +128,7 @@ main ul {
 /******************
 *  prices styles  *
 ******************/
-#orders p:first-of-type,#wip p:first-of-type ,#served p:first-of-type { 
+#orders p:first-of-type,#wip p:first-of-type ,#served p:first-of-type {
 	width: 80%;
 	min-height:68px;
 	background-image: none;
@@ -130,10 +136,10 @@ main ul {
 	border-radius: 8px;
 	border: 0 none;
 }
-#orders p:first-of-type { 
+#orders p:first-of-type {
 	min-height:60px;
 	background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
-	border: 4px solid #66AB6E; 
+	border: 4px solid #66AB6E;
 	box-shadow: 1px 1px 4px #000;
 }
 #orders ul+p span,#sales { font-size: 140%; font-family: 'Orbitron', sans-serif; font-weight: 900;}
@@ -143,12 +149,4 @@ main ul {
 #sales:before { font-weight: normal; font-size: 75%; content: "Total Sales:\A"; white-space: pre; }
 /******************
 *  /prices styles *
-******************/	
-		
-
-
-
-		
-		
-	
-	
+******************/

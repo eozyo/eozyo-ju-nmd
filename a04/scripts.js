@@ -1,4 +1,11 @@
-window.onload = function() { 	
+/**
+*
+*  title	: JavaScript Lab 04, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
+window.onload = function() {
 	var items = [
 		{ name: "regular", price: 15 },
 		{ name: "medium", price: 20 },
@@ -11,7 +18,7 @@ window.onload = function() {
 	loadList(items);
 }
 function loadList(items) {
-	var ul = document.querySelector("#orders ul:first-of-type");	
+	var ul = document.querySelector("#orders ul:first-of-type");
 	var li,span;
 	for(var i=0; i<items.length;i++) {
 		span				= document.createElement("span");
@@ -37,9 +44,9 @@ function addOrder(items) {
 
 	span.removeAttribute("id");
 	ul.appendChild(li);
-	if(obutton.hasAttribute("disabled")) { 
+	if(obutton.hasAttribute("disabled")) {
 		obutton.removeAttribute("disabled");
-		obutton.onclick = function() { span_sale.record(ul.children); sendToBarista(ul,span_sale); } 
+		obutton.onclick = function() { span_sale.record(ul.children); sendToBarista(ul,span_sale); }
 	}
 }
 function removeOrder(span,residual,span_sale,obutton) {
@@ -51,15 +58,15 @@ function sendToBarista(ul,span_sale) {
 	document.querySelector("#orders button").setAttribute("disabled","disabled");
 	var bbutton = document.querySelector("#wip button");
 	var span;
-	while(ul.childElementCount>0) { 
+	while(ul.childElementCount>0) {
 		span = ul.firstChild.firstChild;
 		span.onclick = null;
 		span.innerHTML = span.dataset.name;
 		if(document.getElementById("tempLI")) { document.getElementById("tempLI").remove(); }
 		document.querySelector("#wip p+ul").appendChild(ul.firstChild);
 	}
-	if(bbutton.hasAttribute("disabled")) { 
-		bbutton.removeAttribute("disabled"); 
+	if(bbutton.hasAttribute("disabled")) {
+		bbutton.removeAttribute("disabled");
 		bbutton.onclick = function() { prepareDrink(this); }
 	}
 	span_sale.elm.remove();
@@ -86,7 +93,7 @@ function prepareDrink(bbutton) {
 	}
 }
 function finish(li) {
-	var finished = document.getElementById("finished");	
+	var finished = document.getElementById("finished");
 	if(finished.childElementCount==0){
 		li.firstChild.dataset.count=1;
 		li.firstChild.title=1;
@@ -96,8 +103,8 @@ function finish(li) {
 			var finishedItem = finished.children[i];
 			if(li.firstChild.dataset.name == finishedItem.firstChild.dataset.name) {
 				var match = finishedItem; break;
-			} 
-		}	
+			}
+		}
 		if(match) {
 			match.firstChild.dataset.count++;
 			match.firstChild.title = match.firstChild.dataset.count;
@@ -111,14 +118,14 @@ function finish(li) {
 }
 function TrackIncome($el,$amt) {
 	var sales = document.getElementById("sales");
-	if($el){ $el.innerHTML = parseInt($el.innerHTML) + parseInt($amt); } 
+	if($el){ $el.innerHTML = parseInt($el.innerHTML) + parseInt($amt); }
 	else {
 		$el = document.createElement("span"); $el.innerHTML = $amt;
 		document.querySelector("#orders p:first-of-type").appendChild($el);
 	}
 	this.elm 			= $el;
 	this.currentTotal 	= (isNaN(parseInt(sales.innerHTML)) ? 0 : parseInt(sales.innerHTML));
-	this.record 		= function(items) { 
+	this.record 		= function(items) {
 		sales.innerHTML 	= (this.currentTotal + parseInt($el.innerHTML));
 		sales.style.display	= "inline";
 		// saves the sales into a global object "summary"
@@ -126,7 +133,7 @@ function TrackIncome($el,$amt) {
 		for(var i=0;i<items.length;i++) {
 			order.items[i] = { name : items[i].firstChild.dataset.name, price : +items[i].firstChild.dataset.price }
 			order.total = +order.total + order.items[i].price;
-		}	
+		}
 		// Call "summary" to see all the available data.
 		if(window.summary) {
 			summary.totalOrders++;

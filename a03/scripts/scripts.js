@@ -1,11 +1,12 @@
-window.onload = function() { 	
-	var start_button = document.getElementById("start");
-	start_button.onclick = function () { StartGame(); }
-}
-
+/**
+*
+*  title	: JavaScript Lab 03, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
+window.onload = function() { var start_button = document.getElementById("start"); start_button.onclick = function () { StartGame(); } }
 function StartGame() {
-	//debugger
-	console.clear();
 	console.log("Player started game");
 	var player	 = { position:0, tool:0 };
 	var gameOver = false;
@@ -13,8 +14,8 @@ function StartGame() {
 	var rOptions = ["1","2","3","4"];
 	var rooms 	 = generateRooms();
 	var room;
-	var quit;	
-	
+	var quit;
+
 	while(gameOver==false) {
 		console.log("\tInstructions provided");
 		player.position = prompt(sendInstructions(player,rooms,rOptions));
@@ -29,13 +30,13 @@ function StartGame() {
 				console.log("Game Over");
 				alert("You canceled the game.\n\nGame Over.")
 				break;
-			} 
+			}
 			// User decides to continue
 			else {
 				console.log("\tPlayer did not cancel the game");
 			}
-			
-		} 
+
+		}
 		// User inputs something
 		else {
 			// User selects a valid room number.
@@ -47,7 +48,7 @@ function StartGame() {
 					alert(room.sMsg);
 					room.boss = 0; // remove the boss (if any)
 					player.tool++;
-				} 
+				}
 				else
 				// the player does not have enough tools to defeat a boss or to escape
 				if (room.boss - player.tool > 0) {
@@ -67,17 +68,17 @@ function StartGame() {
 					alert("You have already entered in this room, silly man.");
 				}
 				// if user has all tools, user wins. Game Over.
-				if(player.tool==4) { 
-					gameOver = true; 
+				if(player.tool==4) {
+					gameOver = true;
 					console.log("\tPlayer won.\n\nGame Over.");
-					alert("You Won!\n\nGame Over."); 
+					alert("You Won!\n\nGame Over.");
 				}
 				// else user exits the room and comes back to the center
-				else { 
+				else {
 					console.log("\tPlayer comes back to center.");
 					player.position = 0;
 				}
-			} 
+			}
 			// User selects invalid room number.
 			else {
 				console.log("\tPlayer entered an invalid room number (" + player.position + ")");
@@ -85,20 +86,16 @@ function StartGame() {
 				alert("Sorry, (" + player.position + ") is not a valid number\nPlease try again.");
 				player.position = 0; // player goes back to the center
 			}
-		}		
+		}
 	}
 }
-	
 function sendInstructions($player,$rooms) {
-	//debugger;
 	var msg;
 	$player.position = (isNaN($player.position) || $player.position == null) ? 0 : $player.position;
 	msg = ($player.position == 0 && $player.tool == 0) ? $rooms[$player.position].uMsg : $rooms[$player.position].sMsg;
 	return msg;
 }
-
 function generateRooms() {
-	//debugger;
 	var room = [
 		{
 			sMsg : "This room looks like a storage room, there is not much here. However, there is an overall in the back and it has an ID. You decide to put it on and try to blend in if you cross someone's road.",
@@ -116,35 +113,22 @@ function generateRooms() {
 			boss : 2
 		}
 	];
-	
+
 	// this function randomizes the array indexes; to2do add "lives" to user.
 	//room.sort( function(a, b){return 0.5 - Math.random()} );
-	
+
 	room.unshift({
 			sMsg : "Remember, the only way out is through the elevator you entered. What would you like to do?\n\nPress (1) to open the door to the left.\nPress (2) to open the door in front of you.\nPress (3) to open the door to the right.\nPress (4) to input code in the elevator keypad.",
 			uMsg : "The elevator doors open up, and as soon as you step out they close\nand let you trapped in a small lobby. The lobby has, besides the elevator's, 3 other doors. The only way out is through the elevator you entered. What would you like to do?\n\nPress (1) to open the door to the left.\nPress (2) to open the door in front of you.\nPress (3) to open the door to the right.\nPress (4) to input code in the elevator keypad.",
 			boss : 0
 		});
-	
 	room.push({
 			sMsg : "Congratulations, you are now able to escape!",
 			uMsg : "Sorry, you do not have the sufficient permissions to open this door.",
 			boss : 3
 		});
-	
-	
 	console.log("\tRooms created");
 	console.table(room);
-	
 	return room;
 }
-
-
-
-
-function _random($min,$max) {
-	var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max;
-	return Math.round(r);
-}
-	
-
+function _random($min,$max) { var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max; return Math.round(r); }

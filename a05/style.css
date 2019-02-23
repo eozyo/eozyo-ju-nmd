@@ -1,3 +1,10 @@
+/**
+*
+*  title	: JavaScript Lab 05, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
 /****************
 ** General CSS **
 ****************/
@@ -15,21 +22,21 @@ header { width: 80%; margin: 0 auto; }
 ** Sandbox **
 ************/
 #sandbox {  }
-#sandbox { 
-	width: 90%; 
-	min-width: 600px; 
-	background-color: #EDEDED; 
+#sandbox {
+	width: 90%;
+	min-width: 600px;
+	background-color: #EDEDED;
 	font-family: 'Dosis', sans-serif;
-	margin: 0 auto; 
-	border: 8px solid #474747; 
-	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); 
-	border-radius: 8px; 
+	margin: 0 auto;
+	border: 8px solid #474747;
+	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
+	border-radius: 8px;
 }
 	#sandbox h2 { text-align: center; margin: 0 auto; padding: 0; }
 /************
 ** Wrapper **
 ************/
-#wrapper { 
+#wrapper {
 	width: 560px;
 	min-height: 420px;
 	background-color: #F2F2F2;
@@ -57,7 +64,7 @@ header { width: 80%; margin: 0 auto; }
 		font-weight:700;
 		text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
 		text-align:center;
-		margin:0 0.1em 0.5em 0;		
+		margin:0 0.1em 0.5em 0;
 		padding:0.3em 1.2em;
 		border:0.16em solid #49A6FF;
 		border-radius:2em;
@@ -72,7 +79,7 @@ header { width: 80%; margin: 0 auto; }
 	#controls button:active,#add:active { transform:translate(1px,1px); cursor: pointer; }
 	#controls button[disabled] { color: #3B3B3B; background-color: #DDD; border-color: #404040; cursor: default; }
 	#controls button + button { margin-left: 0.56em; }
-	
+
 /***************
 ** Add button **
 ***************/
@@ -85,7 +92,7 @@ header { width: 80%; margin: 0 auto; }
 /************
 ** Jukebox **
 ************/
-#video { 
+#video {
 	max-width: 560px;
 	font-family: 'Dosis', sans-serif;
 	background-image: linear-gradient(to left, rgba(21,49,95,1),rgba(255,255,255,.75),rgba(21,49,95,1));
@@ -93,7 +100,7 @@ header { width: 80%; margin: 0 auto; }
 	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
 }
 	#video h4,#video h5 { box-sizing:border-box; margin: 0; border: 0 none; }
-	#video h4 { 
+	#video h4 {
 		max-width: 560px;
 		color: rgba(21,49,95,1);
 		font-size: 2em;
@@ -114,8 +121,8 @@ header { width: 80%; margin: 0 auto; }
 /*********************
 ** Background Image **
 *********************/
-#performer { 
-	width: 120px; 
+#performer {
+	width: 120px;
 	height: 120px;
 	background-image: url('img/smal-baby-got-back.jpg');
 	background-size: cover;

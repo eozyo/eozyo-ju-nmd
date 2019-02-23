@@ -1,3 +1,10 @@
+/**
+*
+*  title	: JavaScript Lab 03, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
 /****************
 ** General CSS **
 ****************/
@@ -12,30 +19,30 @@ header { width: 80%; margin: 0 auto; }
 /************
 ** Sandbox **
 ************/
-#sandbox { 
-	width: 90%; 
-	min-width: 600px; 
-	background-color: #EDEDED; 
-	font-family: 'Dosis', sans-serif; 
+#sandbox {
+	width: 90%;
+	min-width: 600px;
+	background-color: #EDEDED;
+	font-family: 'Dosis', sans-serif;
 	text-align: center;
-	margin: 0 auto; 
-	padding: 1.12em 0; 
-	border: 8px solid #474747; 
-	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); 
-	border-radius: 8px; 
+	margin: 0 auto;
+	padding: 1.12em 0;
+	border: 8px solid #474747;
+	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
+	border-radius: 8px;
 }
 /***********
 ** Record **
 ************/
-#record { 
-	width: 65%; 
+#record {
+	width: 65%;
 	font-family: 'Muli', sans-serif;
 	text-align: left;
 	text-shadow: 1px 1px 1px #696969;
 	list-style-type: none;
 	counter-reset: item;
 	margin: 1.12em auto;
-	padding: 0; 
+	padding: 0;
 }
 	#record li { counter-increment: item; margin-bottom: 0.25em; padding: 0.2em 0; border-radius: 8px; cursor: default; }
 	#record li:before {
@@ -50,13 +57,13 @@ header { width: 80%; margin: 0 auto; }
 		margin-left: 12px;
 		content: counter(item);
 		border-radius: 100%;
-		vertical-align: top; 
+		vertical-align: top;
 		display: inline-block;
 	}
 	#record li:nth-child(odd) {  }
 	#record li[class^="game-"] { font-weight: 600; }
 	#record li[class^="game-"]:hover { color: #f2f2f2; }
-	
+
 	#record li.game-won { background-color: rgba(79,175,80,0.25); }
 	#record li.game-won:hover { background-color: rgba(79,175,80,1); }
 	#record li.game-lost { background-color: rgba(189,63,50,0.25); }

@@ -1,5 +1,11 @@
-/* (c) 2019. orem18kz[@]student.ju.se */
-window.onload = function() { 	
+/**
+*
+*  title	: JavaScript Lab 05, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
+window.onload = function() {
 	var items = [
 		{	artistName	  	: "Sir Mix-A-Lot",
 			songTitle	  	: "Baby Got Back",
@@ -39,7 +45,7 @@ function Jukebox(items){
 			this.video.innerHTML = this.playList[0].youtubeEmbedCode.trim() + "<h4>" + this.playList[0].artistName.trim() + "</h4>" + "<h5>" + this.playList[0].songTitle.trim() + "</h5>";
 			this.bkgd.style.backgroundImage="url("+this.playList[0].backgroundURL+")";
 			this.doButtons(this.playList);
-		} 
+		}
 	}
 	this.doButtons = function(submitted) {
 		var that 	= this;

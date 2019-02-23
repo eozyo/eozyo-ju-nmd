@@ -1,3 +1,10 @@
+/**
+*
+*  title	: Lab02, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
 window.onload = function() { document.getElementById("start").onclick = function () { startGame(); } }
 function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 	var rndm  = _random($lowLimit,$highLimit);
@@ -17,7 +24,7 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 				else {
 					if(turn+1 !== $chances) {
 						diff = Math.abs (guess-rndm);
-						sign = Math.sign(guess-rndm);	
+						sign = Math.sign(guess-rndm);
 						switch(true) {
 							case diff <=  5	: msg = "Very Hot! You just missed it!"; break;
 							case diff <= 10	: msg = "Hot! You are really close!"; break;
@@ -29,7 +36,7 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 						msg = msg + "\nSorry, (" + guess + ") was incorrect, try with a " + ((sign > 0) ? "lower" : "higher") + " number.";
 					} else { msg = "Sorry, you ran out of your " + $chances + " chances.\nGame over."; }
 					tabs.push(guess);
-					count = true;					
+					count = true;
 				}
 			break;
 			case (guess==null || !guess):
@@ -50,7 +57,7 @@ function startGame($lowLimit=1,$highLimit=80,$chances=10) {
 			break;
 			case (isNaN(guess)): msg = "Sorry, (" + guess + ") does not seem to be a valid character."; break;
 			default: msg = "Something went wrong. ";
-		}	
+		}
 		if(win===true && quit === true) { turn++; break; } else
 		if(quit===true) { break; }
 		if(count=== true) { turn++; count = false; }
@@ -73,18 +80,18 @@ function record($win,$rndm,$turn,$guess,$tabs,$chances){
 			li.innerText = "You Won. Congrats! In " + $turn + " turn" + (($turn>1) ? "s":"") + " you guessed the random number " + $rndm + ".";
 		break;
 		case ($win==null && $turn==$chances):
-			_("user lost"); 
+			_("user lost");
 			li.setAttribute("class","game-lost");
 			li.innerText = "You Lost. You did not guess the random number " + $rndm + " after " + $turn + " turn" + (($turn>1) ? "s":"") + ".";
 		break;
 		case $win==null:
-			if($win==null) { 
+			if($win==null) {
 				_("user canceled");
 				li.setAttribute("class","game-canceled");
 				li.innerText = "Game Canceled after " + $turn + " attempt" + (($turn>1) ? "s":"") + ". The random number was " + $rndm + ".";
 			}
 		break;
-		default: 
+		default:
 			_("An error has ocurred");
 			li.setAttribute("class","error");
 			li.innerText = "Game error. Game stopped after " + $turn + " attempt" + (($turn>1) ? "s":"") + ". The random number was " + $rndm + ".";
@@ -98,7 +105,7 @@ function record($win,$rndm,$turn,$guess,$tabs,$chances){
 		for (i = 0; i < won.length; i++) { sum += +won[i].dataset.attempts; }
 		average.firstElementChild.innerHTML = (sum/won.length).toFixed(2);
 		average.style.display="block";
-	} else { average.firstElementChild.innerHTML = li.dataset.attempts; }	
+	} else { average.firstElementChild.innerHTML = li.dataset.attempts; }
 }
 /* Helper functions */
 function _random($lowerLimit,$higherLimit) { var random = Math.floor((Math.random()*$higherLimit)+$lowerLimit); return random; }

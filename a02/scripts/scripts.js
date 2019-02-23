@@ -1,19 +1,16 @@
 /**
 *
-*  title	: Lab02, Client-side programming
+*  title	: JavaScript Lab 02, Client-side Programming I && II
 *  author	: orem18kz
-*  email	: orem18kz@student.ju.se
+*  email	: orem18kz[@]student,ju,se
 *
 */
-
 window.onload = function () {
 	var start_button  = document.getElementById("start");
 	var record  = document.getElementById("record");
-	var highlight_button = document.getElementById("highlight"); 
+	var highlight_button = document.getElementById("highlight");
 	start_button.onclick = function() { start_game(); }
 }
-
-
 /* start the game */
 function start_game ($levels=7,$chances=2) {
 	console.log("Game started");
@@ -25,11 +22,11 @@ function start_game ($levels=7,$chances=2) {
 		breadcrumbs,
 		bc_prmpt,
 		confrm,
-		d;	
+		d;
 
 	console.log("\tWelcome message.");
 	alert(msg);
-	
+
 	while(turn < $levels) {
 
 	if(!breadcrumbs) { breadcrumbs = ""; }
@@ -43,7 +40,7 @@ function start_game ($levels=7,$chances=2) {
 			if (answer.toLowerCase().replace(/\s/g, "") == msg[2].replace(/\s/g, "")) {
 				console.log("\tCorrect answer: " + answer);
 				alert("YES! Correct!");
-				turn++; breadcrumbs += d + "o"; pts += ($chances==2) ? 2 : 1; $chances=2,ctrl=0; 
+				turn++; breadcrumbs += d + "o"; pts += ($chances==2) ? 2 : 1; $chances=2,ctrl=0;
 			} else {
 				console.log("\tWrong answer: " + answer);
 				alert ("No sorry, error. Try again.");
@@ -76,26 +73,26 @@ function start_game ($levels=7,$chances=2) {
 }
 
 /* end game */
-function end_game($reason,$msg,$pts) { 
+function end_game($reason,$msg,$pts) {
 	switch($reason) {
 		case 0: break;
 		case 1: break;
 		case 2: break;
 	}
 	_do_li($reason,$pts);
-	console.log($reason,$msg,$pts); 
+	console.log($reason,$msg,$pts);
 }
 
-/* in-game routines */	
+/* in-game routines */
 function _close_breadcrumbs($levels,$turn) {
 	var i,d;
 	var d="";
-	for(i=0;i<$levels;++i) { 
+	for(i=0;i<$levels;++i) {
 		if(i>$turn) { d += "--" + (i+1); }
 	}
 	return d;
 }
-function _do_question($turn) { 
+function _do_question($turn) {
 	var r = _random(0,2);
 	var d = [];
 	var h,q,a,t;
@@ -144,14 +141,14 @@ function _do_question($turn) {
 function _do_li($result,$pts) {
 	var scoreboard_ul = document.getElementById("scoreboard");
 	var li_element	= document.createElement("li");
-	
+
 	li_text = document.createTextNode("Game " + (scoreboard_ul.children.length+1) + ", score: " + $pts);
 		li_element.setAttribute("class", "result-" + $result);
 		li_element.setAttribute("data-result", $result);
 		li_element.setAttribute("data-score", $pts);
 		li_element.appendChild(li_text);
 		scoreboard_ul.appendChild(li_element);
-	
+
 }
 
 /* help functions */
