@@ -131,4 +131,13 @@ function generateRooms() {
 	console.table(room);
 	return room;
 }
+/* Helper functions */
 function _random($min,$max) { var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max; return Math.round(r); }
+function _(str) { console.log(str); }
+/* jQuery routines for nmd.eozyo.info */
+$(document).ready(function($){
+	$('aside p a').click(function(e){
+		e.preventDefault();
+		$(this).parent().next().slideToggle('slow');
+  });
+});

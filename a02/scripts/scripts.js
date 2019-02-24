@@ -150,9 +150,12 @@ function _do_li($result,$pts) {
 		scoreboard_ul.appendChild(li_element);
 
 }
-
 /* help functions */
-function _random($min,$max) {
-	var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max;
-	return Math.round(r);
-}
+function _random($min,$max) { var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max; return Math.round(r); }
+/* jQuery routines for nmd.eozyo.info */
+$(document).ready(function($){
+	$('aside p a').click(function(e){
+		e.preventDefault();
+		$(this).parent().next().slideToggle('slow');
+  });
+});
