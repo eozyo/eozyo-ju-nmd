@@ -36,7 +36,7 @@ header { width: 80%; margin: 0 auto; }
 /*****************
 **  pagination  **
 *****************/
-#pagination { overflow: hidden; }
+#pagination { overflow: hidden; margin-bottom: -4.12em; }
 	#pagination .left { float: left; }
 	#pagination .right { float: right; }
 /**********************

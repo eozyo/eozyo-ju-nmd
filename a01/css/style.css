@@ -9,7 +9,7 @@
 ** General CSS **
 ****************/
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
-#playground,#paginationaside { width: 90%;	margin: 0 auto; }
+#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
 /***********
 ** header **
 ***********/
@@ -25,7 +25,7 @@ header { width: 80%; margin: 0 auto; }
 /*****************
 **  pagination  **
 *****************/
-#pagination { overflow: hidden; }
+#pagination { overflow: hidden; margin-bottom: -4.12em; }
 	#pagination .left { float: left; }
 	#pagination .right { float: right; }
 /**********************
