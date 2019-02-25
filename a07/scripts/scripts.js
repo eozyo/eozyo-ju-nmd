@@ -8,3 +8,10 @@
 
 /* Helper functions */
 function _(str) { console.log(str); }
+/* jQuery routines for nmd.eozyo.info */
+$(document).ready(function($){
+	$('aside p a').click(function(e){
+		e.preventDefault();
+		$(this).parent().next().slideToggle('slow');
+  });
+});

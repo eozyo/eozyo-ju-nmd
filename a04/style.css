@@ -5,53 +5,74 @@
 *  email	: orem18kz[@]student,ju,se
 *
 */
+/******************
+**  General css  **
+******************/
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
+button[disabled="disabled"] { display: none; }
+h1,h2,h3 { font-weight: 800; }
+section p { text-align: center; }
+#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
+/*************
+**  header  **
+*************/
 header { width: 80%; text-align: center; margin: 0 auto; }
 	header ul:first-of-type { width: 50%; margin: 0 auto; text-align: left; }
-main { width: 80%; font-family: 'Dosis', sans-serif; margin: 0 auto; /*border: 1px solid red;*/ }
-	main > div {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-	main h2,main h3 { font-family: 'Dosis', sans-serif; font-size: 1.5em; text-align: center; }
-	main section { background-color: #ddd; }
-		main > div > section {
-			width: 30%;
-			min-height: 520px;
-			padding: 0.5%;
-			border-width: 3px;
-			border-style: solid;
-			border-radius: 10px;
-			box-shadow: 1px 1px 4px #000;
-		}
-		main>div>section:nth-child(1) {
-			border-color: #6D0A00;
-			background: #CB356B;
-			background: -webkit-linear-gradient(to top, #BD3F32, #CB356B);
-			background: linear-gradient(to top, #BD3F32, #CB356B);
-		}
-		main>div>section:nth-child(2) {
-			border-color: #AF5A0E;
-			background: #F2994A;
-			background: -webkit-linear-gradient(to top, #F2C94C, #F2994A);
-			background: linear-gradient(to top, #F2C94C, #F2994A);
-		}
-		main>div>section:nth-child(3) {
-			border-color: #246A02;
-			background: #56ab2f;
-			background: -webkit-linear-gradient(to top, #a8e063, #56ab2f);
-			background: linear-gradient(to top, #a8e063, #56ab2f);
-		}
-h1,h2,h3 { font-weight: 800; }
-h3 { text-transform: capitalize; }
-section p { text-align: center; }
-button[disabled="disabled"] { display: none; }
-/**************
-*     tags    *
+/***************
+** playground **
+***************/
+#playground { font-family: 'Dosis', sans-serif; }
+	#playground h2 { font-family: 'Dosis', sans-serif; font-size: 1.5em; text-align: center; }
+/*****************
+**  pagination  **
+*****************/
+#pagination { overflow: hidden; }
+	#pagination .left { float: left; }
+	#pagination .right { float: right; }
+/**********************
+** Source Code holder **
+***********************/
+aside  { padding: 0.52%;  }
+	aside h2 { text-align: center; }
+	aside p { max-width: 800px; text-align: center; margin: 0.56em auto; }
+		aside p a { font-size: 110%; text-decoration: none; }
+	aside div.sourceCode { width: 80%;  display: none; margin: 0 auto; border: 8px solid #CCC; }
+		aside div.sourceCode iframe { width: 85%; height: 800px; margin: 0 auto; display: block; }
+/***********
+** footer **
+***********/
+footer p { text-align: center; }
+
+
+/*********************
+**  Particular css  **
+**********************
+**  Sandbox  **
 **************/
+#sandbox {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+#sandbox section {
+	width: 30%;
+	min-height: 520px;
+	background-color: #ddd;
+	padding: 0.5%;
+	border-width: 3px;
+	border-style: solid;
+	border-radius: 10px;
+	box-shadow: 1px 1px 4px #000;
+}
+		#sandbox section h3 { font-family: 'Dosis', sans-serif; font-size: 1.5em; text-transform: capitalize; text-align: center; }
+#orders	{	border-color: #6D0A00; background: #CB356B; background: -webkit-linear-gradient(to top, #BD3F32, #CB356B); background: linear-gradient(to top, #BD3F32, #CB356B); }
+#wip 		{ border-color: #AF5A0E; background: #F2994A; background: -webkit-linear-gradient(to top, #F2C94C, #F2994A); background: linear-gradient(to top, #F2C94C, #F2994A); }
+#served	{ border-color: #246A02; background: #56ab2f; background: -webkit-linear-gradient(to top, #a8e063, #56ab2f); background: linear-gradient(to top, #a8e063, #56ab2f); }
+/***********
+**  tags  **
+***********/
 span.tag {
 	color: #F2F2F2;
 	background-color: #999; /* darkGrey */
@@ -102,7 +123,7 @@ span.remove-tag {
 /***************
 *  list styles *
 ***************/
-main ul {
+#sandbox ul {
 	width: 90%;
 	min-height: 112px;
 	background-color: #f4f4f4;
@@ -120,7 +141,8 @@ main ul {
 	border-radius: 10px;
 	box-shadow: 1px 1px 6px #000;
 }
-	main ul li { display: inline; margin: 4px 2px; position: relative; }
+	#sandbox section ul li { display: inline; margin: 4px 2px; position: relative; }
+	#sandbox section ul li#sales { display: none; }
 	#finished li :after { content:  " × " attr(data-count) }
 /***************
 * /list styles *
@@ -145,7 +167,7 @@ main ul {
 #orders ul+p span,#sales { font-size: 140%; font-family: 'Orbitron', sans-serif; font-weight: 900;}
 #orders ul+p span:before,#wip ul+p span:before { font-size: 60%; font-weight: 400; content: "Pre-order value:\A"; white-space: pre; font-weight: normal; }
 #orders ul+p span:after,#wip ul+p span:after,#sales:after { content: ":-"}
-#sales { font-weight: bold; font-size: 150%; display: none; }
+#sales { font-weight: bold; font-size: 150%; }
 #sales:before { font-weight: normal; font-size: 75%; content: "Total Sales:\A"; white-space: pre; }
 /******************
 *  /prices styles *

@@ -153,3 +153,10 @@ function TrackIncome($el,$amt) {
 /* Helper functions */
 function _random($lowerLimit,$higherLimit) { var random = Math.floor((Math.random()*$higherLimit)+$lowerLimit); return random; }
 function _(str) { console.log(str); }
+/* jQuery routines for nmd.eozyo.info */
+$(document).ready(function($){
+	$('aside p a').click(function(e){
+		e.preventDefault();
+		$(this).parent().next().slideToggle('slow');
+  });
+});

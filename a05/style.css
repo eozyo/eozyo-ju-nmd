@@ -11,6 +11,7 @@
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
 button { position: relative; z-index: 999; }
 section { display: block; }
+#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
 /***********
 ** header **
 ***********/
@@ -21,21 +22,40 @@ header { width: 80%; margin: 0 auto; }
 /***************
 ** playground **
 ****************/
-#playground {  }
 #playground {
-	width: 90%;
 	min-width: 600px;
 	background-color: #EDEDED;
 	font-family: 'Dosis', sans-serif;
-	margin: 0 auto;
+
 	border: 8px solid #474747;
 	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
 	border-radius: 8px;
 }
 	#playground h2 { text-align: center; margin: 0 auto; padding: 0; }
-/************
-** Wrapper **
-************/
+/*****************
+**  pagination  **
+*****************/
+#pagination { overflow: hidden; }
+	#pagination .left { float: left; }
+	#pagination .right { float: right; }
+/**********************
+** Source Code holder **
+***********************/
+aside  { padding: 0.52%;  }
+	aside h2 { text-align: center; }
+	aside p { max-width: 800px; text-align: center; margin: 0.56em auto; }
+		aside p a { font-size: 110%; text-decoration: none; }
+	aside div.sourceCode { width: 80%;  display: none; margin: 0 auto; border: 8px solid #CCC; }
+		aside div.sourceCode iframe { width: 85%; height: 800px; margin: 0 auto; display: block; }
+/***********
+** footer **
+***********/
+footer p { text-align: center; }
+/*******************
+** Particular css **
+/*******************
+**     Wrapper    **
+*******************/
 #wrapper {
 	width: 560px;
 	min-height: 420px;
@@ -137,7 +157,3 @@ header { width: 80%; margin: 0 auto; }
 }
 	#performer img { width: 100%; min-width: 240px; max-width: 560px; vertical-align: bottom; border-radius: 50%;}
 	#performer h4,#performer h3 { margin: 0; padding: 0; }
-/***********
-** footer **
-***********/
-footer p { text-align: center; }

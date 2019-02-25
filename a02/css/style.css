@@ -9,6 +9,7 @@
 ** General CSS **
 ****************/
 body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
+#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
 /***********
 ** header **
 ***********/
@@ -20,19 +21,23 @@ header { width: 80%; margin: 0 auto; }
 ** playground **
 ***************/
 #playground {
-	width: 90%;
 	min-width: 600px;
 	background-color: #EDEDED;
 	font-family: 'Dosis', sans-serif;
 	text-align: center;
-	margin: 0 auto;
 	padding: 1.12em 0;
 	border: 8px solid #474747;
 	box-shadow: 3px 3px 6px rgba(43, 83, 117,.5);
 	border-radius: 8px;
 }
-#playground ul { list-style: none; }
-#playground,aside div.sourceCode { background-color: #ededed; padding: 1.12em 0; box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); border-radius: 8px; }
+	#playground ul { list-style: none; }
+	#playground,aside div.sourceCode { background-color: #ededed; padding: 1.12em 0; box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); border-radius: 8px; }
+/*****************
+**  pagination  **
+*****************/
+#pagination { overflow: hidden; }
+	#pagination .left { float: left; }
+	#pagination .right { float: right; }
 /**********************
 ** Source Code holder **
 ***********************/
