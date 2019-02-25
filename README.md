@@ -4,4 +4,4 @@ This is the most up-to-date version of the JavaScript assignments coded during t
 
 ## Content
 The finished assigments are listed as follows:
-* Lab01 - Guess the Number.
+* [Lab01 - Guess the Number](https://github.com/eozyo/js/tree/master/a01).
