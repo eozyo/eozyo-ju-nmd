@@ -5,42 +5,6 @@
 *  email	: orem18kz[@]student,ju,se
 *
 */
-/****************
-** General CSS **
-****************/
-body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
-#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
-/***********
-** header **
-***********/
-header { width: 80%; margin: 0 auto; }
-	header h1 { text-align: center; }
-	header h2 { margin-bottom: 0; }
-	header ul { width: 65%; margin-top: 0.5em; }
-/***************
-** playground **
-***************/
-#playground { min-width: 600px; font-family: 'Dosis', sans-serif; text-align: center; border: 8px solid #474747; }
-#playground,aside div.sourceCode { background-color: #ededed; padding: 1.12em 0; box-shadow: 3px 3px 6px rgba(43, 83, 117,.5); border-radius: 8px; }
-/*****************
-**  pagination  **
-*****************/
-#pagination { overflow: hidden; margin-bottom: -4.12em; }
-	#pagination .left { float: left; }
-	#pagination .right { float: right; }
-/**********************
-** Source Code holder **
-***********************/
-aside  { padding: 0.52%;  }
-	aside h2 { text-align: center; }
-	aside p { max-width: 800px; text-align: center; margin: 0.56em auto; }
-		aside p a { font-size: 110%; text-decoration: none; }
-	aside div.sourceCode { width: 80%;  display: none; margin: 0 auto; border: 8px solid #CCC; }
-		aside div.sourceCode iframe { width: 85%; height: 800px; margin: 0 auto; display: block; }
-/***********
-** footer **
-***********/
-footer p { text-align: center; }
 /*******************
 ** Particular css **
 ********************

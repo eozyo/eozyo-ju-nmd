@@ -8,42 +8,17 @@
 /******************
 **  General css  **
 ******************/
-body { font-family: 'Gentium Basic', serif; font-size: 100%; margin: 0 auto; }
 button[disabled="disabled"] { display: none; }
 h1,h2,h3 { font-weight: 800; }
 section p { text-align: center; }
-#playground,#pagination,aside { width: 90%;	margin: 0 auto; }
 /*************
 **  header  **
 *************/
-header { width: 80%; text-align: center; margin: 0 auto; }
-	header ul:first-of-type { width: 50%; margin: 0 auto; text-align: left; }
+header ul:first-of-type { width: 50%; margin: 0 auto; text-align: left; }
 /***************
 ** playground **
 ***************/
-#playground { font-family: 'Dosis', sans-serif; }
-	#playground h2 { font-family: 'Dosis', sans-serif; font-size: 1.5em; text-align: center; }
-/*****************
-**  pagination  **
-*****************/
-#pagination { overflow: hidden; margin-bottom: -4.12em; }
-	#pagination .left { float: left; }
-	#pagination .right { float: right; }
-/**********************
-** Source Code holder **
-***********************/
-aside  { padding: 0.52%;  }
-	aside h2 { text-align: center; }
-	aside p { max-width: 800px; text-align: center; margin: 0.56em auto; }
-		aside p a { font-size: 110%; text-decoration: none; }
-	aside div.sourceCode { width: 80%;  display: none; margin: 0 auto; border: 8px solid #CCC; }
-		aside div.sourceCode iframe { width: 85%; height: 800px; margin: 0 auto; display: block; }
-/***********
-** footer **
-***********/
-footer p { text-align: center; }
-
-
+#playground h2 { font-family: 'Dosis', sans-serif; font-size: 1.5em; text-align: center; }
 /*********************
 **  Particular css  **
 **********************
