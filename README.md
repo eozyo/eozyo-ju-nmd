@@ -10,4 +10,4 @@ Finished and WIP* assigments are listed as follows:
 * [Lab04: The Coffeehouse app](https://github.com/eozyo/js/tree/master/a04).
 * [Lab05: The Jukebox](https://github.com/eozyo/js/tree/master/a05).
 * [Lab06: The Splitter](https://github.com/eozyo/js/tree/master/a06).
-*	[Lab07: The Guessing Game](https://github.com/eozyo/js/tree/master/a07)*.
+*	[Lab07: The Guessing Game](https://github.com/eozyo/js/tree/Assignment-07/a07)*.
