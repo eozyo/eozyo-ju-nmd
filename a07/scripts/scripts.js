@@ -5,7 +5,9 @@
 *  email	: orem18kz[@]student,ju,se
 *
 */
+window.onload = function() {
 
+}
 /* Helper functions */
 function _(str) { console.log(str); }
 /* jQuery routines for nmd.eozyo.info */
