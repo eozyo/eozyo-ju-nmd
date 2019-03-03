@@ -4,7 +4,7 @@ This is the most up-to-date version of the JavaScript assignments coded during t
 
 ## Content
 Finished and WIP* assigments are listed as follows:
-* [Lab01 - Guess the Number](https://github.com/eozyo/js/tree/master/a01).
+* [Lab01 - Guess the Number](a01).
 * [Lab02: The Hurdle Game](https://github.com/eozyo/js/tree/master/a02).
 * [Lab03: The Maze](https://github.com/eozyo/js/tree/master/a03).
 * [Lab04: The Coffeehouse app](https://github.com/eozyo/js/tree/master/a04).
