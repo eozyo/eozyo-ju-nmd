@@ -7,4 +7,28 @@
 */
 /*******************
 ** Particular css **
-********************
+*******************/
+#guessArea {
+  margin: 1.12em auto;
+  padding: 0;
+  list-style-type: none;
+  border: 1px solid red;
+}
+  #guessArea li {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+
+  #guessArea li.guess {
+    border: 2px solid brown;
+  }
+
+
+/***********
+** Colors **
+***********/
+.white { background-color: #FFFFFF; }
