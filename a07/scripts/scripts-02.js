@@ -6,39 +6,42 @@
 *
 */
 var guessTheNumber;
-
 window.onload = function() {
 	guessTheNumber = new GuessGame();
-	["keypress","input","paste"].forEach(function($event) { guessTheNumber.html.input.addEventListener($event, function(e) { guessTheNumber.input(e); }) });
-	guessTheNumber.html.input.addEventListener( "select", function(e) { guessTheNumber.erase(e); guessTheNumber.draw(); });
+	["keypress","input","focus","paste"].forEach(function($event) { guessTheNumber.html.input.addEventListener($event, function(e) { guessTheNumber.input(e); }) });
+	guessTheNumber.html.input.addEventListener ("select", function(e) { guessTheNumber.erase(e); guessTheNumber.draw(); });
+	guessTheNumber.html.button.addEventListener("click",  function(e) { guessTheNumber.challenge(e); });
 	guessTheNumber.html.input.setAttribute("min",guessTheNumber.data.lowLimit);
 	guessTheNumber.html.input.setAttribute("max",guessTheNumber.data.highLimit);
-	guessTheNumber.html.input.autofocus;
 }
 
-function GuessGame($inputTag="inputTag",$buttonTag="validate",$guessArea="guessArea",$lowLimit=1,$highLimit=10,$chances=10) {
+function GuessGame($inputTag="inputTag",$buttonTag="validate",$guessArea="guessArea",$stats="stats",$lowLimit=1,$highLimit=10,$chances=10) {
 	this.data 	= {
 		lowLimit 		: $lowLimit,
 		highLimit 	: $highLimit,
+		gameNumber	: 0,
 		chances 		: $chances,
-		random 			: _random(1,10),
+		random 			: _r(1,10),
 		validKeys 	: [48,49,50,51,52,53,54,55,56,57],
-		guess				: null
+		guess				: null,
+		score				: 0
 	}
 	this.html		= {
 		input 			:	document.getElementById($inputTag),
 		button			: document.getElementById($buttonTag),
 		ul					: document.getElementById($guessArea),
+		stats				: document.getElementById($stats),
+		circles			: document.querySelectorAll("#guessArea li"),
+		li_guess		: null,
 		div_rdm			: document.getElementById("random"),
 		get li() 		{ return this.ul.children; }
 	}
-	this.input	= function(e) {
-		this.html.div_rdm.innerText=this.data.random;
+	this.input = function(e) {
 
-		e.preventDefault();
 		let inputSource 	= e;
 		let initial_input	= this.html.input.value;
-
+		e.preventDefault();
+		this.html.div_rdm.innerText = this.data.random;
 		switch (inputSource.type) {
 			case "keypress":
 				let keyPressed = {
@@ -55,77 +58,57 @@ function GuessGame($inputTag="inputTag",$buttonTag="validate",$guessArea="guessA
 						this.draw(this.data.guess);
 					} else {
 						alert("Sorry, but number " + this.html.input.value + keyPressed.number.toString() + " would be outbonds.\nPlease, enter a number between " + this.data.lowLimit + " and " + this.data.highLimit + ".");
-						_("a valid number, out ouf bounds, was entered");
+						__("a valid number, out ouf bounds, was entered");
 					}
 				} else { alert("Sorry, only numbers are allowed."); }
 				break;
 			case "input":
+			case "focus":
 				if(this.html.input.value!="" && typeof +this.html.input.value == "number") {
-					this.draw(this.html.input.value);
-				} else { this.draw(); }
+					this.data.guess = this.html.input.value;
+					this.draw(this.data.guess); } else { this.draw();
+				}
 				break;
 			default:
 				alert("Please only use your keyboard to input numbers");
+				__(e);
 		}
-
 	}
-	this.draw		= function($amt=0) {
-		let html = {
-			circles		: document.querySelectorAll("#guessArea li"),
-			li_guess	: document.querySelectorAll("li.guess")
-		}
-
-		html.li_guess.forEach(function(element) { element.classList.remove("guess"); });
-
-		if($amt>0){
+	this.draw = function($guess=0) {
+		this.html.li_guess = document.querySelectorAll("li.guess");
+		this.html.li_guess.forEach(function($element) { $element.classList.remove("guess"); });
+		if($guess>0){
 			if(this.html.button.hasAttribute("disabled")) { this.html.button.removeAttribute("disabled"); }
-
-			html.circles.forEach(function(circle) {
-				if(!circle.classList.contains("white")) {
-					circle.classList.add("white");
-				}
-			})
-
-			for(let i=0; i<$amt; i++) {
-				html.circles[i].classList.add("guess");
-			}
-
+			this.html.circles.forEach(function(circle) {	if(!circle.classList.contains("white")) { circle.classList.add("white"); }	});
+			for(let i=0; i<$guess; i++) { this.html.circles[i].classList.add("guess"); }
 		} else {
-				html.li_guess.forEach(function(el) { el.classList.remove("guess"); });
+				this.html.li_guess.forEach(function($element) { $element.classList.remove("guess"); });
+				this.html.circles.forEach (function(circle)   { if(circle.classList.contains("white")) { circle.classList.remove("white"); }	});
 				this.html.button.setAttribute("disabled", "disabled")
 		}
 	}
+	this.challenge = function(e) {
+		let that = this;
 
-	this.erase			= function(e) {
-		e.preventDefault();
-		this.html.input.value="";
-	}
-	/*
-	// validates
-	this.validate		= function(e) {
-		alert("here it will be validated");
-		_(e);
-	}
-	// resets
-	this.resetC			= function() {
-		for (let i=0, l=this.html.ul.children.length; i<l; i++) {
-			if(this.html.ul.children[i].classList.contains("guess")) {
-				this.html.ul.children[i].classList.remove("guess");
-				this.html.button.setAttribute("disabled","disabled");
-			}
+		if(this.html.stats.style.display===""||this.html.stats.style.display==="none") { this.html.stats.style.display="block"; }
+
+		switch (true) {
+			case (this.data.guess<=this.data.random):
+				for(let i=0; i<this.data.guess; i++) { this.html.circles[i].classList.add("matched"); }
+				this.data.score += this.data.guess;
+				break;
+			default:
+
 		}
-	} /*
-	// wheels
-	this.wheel			= function(e) {
-		if(this.html.input.value == "") { this.html.input.value = 0; }
 
-		if (e.deltaY < 0) { if(this.html.input.value < this.data.highLimit) { this.html.input.value++; } }
-		if (e.deltaY > 0) { if(this.html.input.value > this.data.lowLimit)  { this.html.input.value--; } }
+
+
+		__(e);
 	}
-	*/
+	this.erase = function(e) { e.preventDefault(); this.html.input.value=""; this.draw(); }
 }
 /* Helper functions */
-function _random($min,$max) { var r = ($min<0) ? $min + Math.random()*(Math.abs($min)+$max) : $min + Math.random()*$max; return Math.round(r); }
-function _(str) { console.log(str); }
+function __(str) { console.log(str); }
+function _r($min,$max) { $min = Math.ceil($min); $max = Math.floor($max); return Math.floor(Math.random() * ($max - $min + 1)) + $min; }
 /* jQuery routines for nmd.eozyo.info */
 $(document).ready(function($){ $('aside p a').click(function(e){ e.preventDefault(); $(this).parent().next().slideToggle('slow'); }); });

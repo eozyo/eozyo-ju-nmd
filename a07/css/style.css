@@ -8,11 +8,30 @@
 /*******************
 ** Particular css **
 *******************/
+
+/*************
+** inputTag **
+*************/
+#inputTag {
+  width: 2.8em;
+  font-size: 2em;
+  padding: 0.25em;
+  box-sizing: border-box;
+  text-align: center;
+}
+/********************
+** validate button **
+********************/
+#validate { margin-top: 1.12em;}
+
+/**************
+** guessArea **
+**************/
 #guessArea {
   margin: 1.12em auto;
   padding: 0;
   list-style-type: none;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
   #guessArea li {
     width: 20px;
@@ -23,11 +42,26 @@
     display: inline-block;
   }
 
-  #guessArea li.guess {
-    border: 2px solid brown;
+  #guessArea li.guess { border: 2px solid brown; }
+    #guessArea li.guess.matched { border-color: green; }
+
+/*****************************
+** Current Game Stats Area  **
+*****************************/
+#stats,#record { display:none; }
+  #stats div.flex {
+    border: 1px solid red;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
   }
+    #stats section { width: 30%; border: 1px solid blue; }
+/************
+**  record **
+************/
+#record {
 
-
+}
 /***********
 ** Colors **
 ***********/
