@@ -1,0 +1,82 @@
+/**
+*
+*  title	: JavaScript Lab 07, Client-side Programming I && II
+*  author	: orem18kz
+*  email	: orem18kz[@]student,ju,se
+*
+*/
+/*******************
+** Particular css **
+*******************/
+ul { list-style-type: none; }
+/************
+** classes **
+************/
+
+/***********
+** Colors **
+***********/
+.white { background-color: #FFFFFF; }
+/*************
+** inputTag **
+*************/
+#inputTag {
+  width: 2.8em;
+  font-size: 2em;
+  padding: 0.25em;
+  box-sizing: border-box;
+  text-align: center;
+}
+/**************
+**  buttons  **
+**************/
+#omni { margin: 0.56em auto; text-transform: capitalize; }
+/**************
+** display **
+**************/
+#display {
+  margin: 0 auto 0.56em;
+  padding: 0;
+  list-style-type: none;
+  /* border: 1px solid red; */
+}
+  #display li {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+
+  #display .guess { border: 2px solid blue; }
+    #display li.matched { border-color: green; }
+    #display li.mismatched { border-color: red;}
+    #display li.revealed { background-color: yellow; }
+/**********
+** board **
+**********/
+#board { /* visibility: hidden; */ }
+#board ul { width: 75%; margin: 0 auto; text-transform: capitalize; display: flex; flex-flow: row wrap; justify-content: space-around; }
+  #board ul>li { width: 15%; border: 1px solid red; }
+  #board li { font-weight: bold; }
+  #board li>span::before { content: "\A"; white-space: pre; }
+  #board li>span { font-weight: normal; }
+/*****************************
+** Current Game Stats Area  **
+*****************************/
+/* #stats,#record { display:none; } */
+  #stats table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-sizing: content-box;
+  }
+  #stats table, #stats th, #stats td { border: 2px solid black; }
+    #stats table thead th {  text-transform: capitalize; }
+/************
+**  record **
+************/
+#record {
+
+}

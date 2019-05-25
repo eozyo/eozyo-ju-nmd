@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="orem18kz[@]student,ju,se" />
+		<title>Client-side Programming: Assignment 07.</title>
+		<link href="https://fonts.googleapis.com/css?family=Dosis:400,800%7CGentium+Basic:400,700%7CMuli:600" rel="stylesheet" />
+		<link href="../css/common-style.css" rel="stylesheet"/>
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="scripts/scripts.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Lab07: The Guessing Game</h1>
+			<section>
+				<h2>Instructions</h2>
+				<ul>
+					<li>Guess lower than or equal to the random number to score.</li>
+				</ul>
+			</section>
+		</header>
+		<main id="playground">
+			<h2>Test UI</h2>
+			<div id="sandbox">
+				<input id="inputTag" type="number" autofocus="autofocus" />
+				<br />
+				<button id="omni" class="launch" disabled="disabled">start game</button>
+				<ul id="display">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<section id="board">
+					<h3>Current Round</h3>
+					<ul>
+						<li>game<span id="gameBoard">0</span></li>
+						<li>round<span id="roundBoard">0</span></li>
+						<li>guess<span id="guessBoard">0</span></li>
+						<li>random<span id="randomBoard">0</span></li>
+						<li>total pts<span id="totalPtsBoard">0</span></li>
+					</ul>
+				</section>
+				<section id="stats">
+					<h3>Game Stats</h3>
+					<table id="scores">
+						<thead>
+							<tr>
+								<th>game</th>
+								<th>round</th>
+								<th>guess</th>
+								<th>random</th>
+								<th>points</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>1</td>
+								<td>4</td>
+								<td>6</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>6</td>
+								<td>6</td>
+								<td>10</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<div id="random"></div>
+			</div>
+		</main>
+		<div id="pagination">
+			<p class="left"><a href="../a06/">« Lab06: The Splitter</a></p>
+			<p class="right"></p>
+		</div>
+		<aside>
+			<h2>Source code</h2>
+			<p><a href="#js">JavaScript</a></p>
+			<div id="sc-js" class="sourceCode">
+			<!--	<iframe src="https://pastebin.com/embed_iframe/Kfhg7m44"></iframe>-->
+			</div>
+		</aside>
+		<footer>
+			<p>© MMXIX. All copyrights reserved. nmd.eozyo.info. </p>
+		</footer>
+	</body>
+</html>
